@@ -10,7 +10,7 @@ def launch(nick: str):
     """
     friends = twitter_friends.parse_data(nick)
     coordinates = find_coordinates(friends)
-    gen_map(coordinates)
+    gen_map(coordinates, nick)
 
 
 def find_coordinates(friends: dict) -> set:
@@ -30,7 +30,7 @@ def find_coordinates(friends: dict) -> set:
     return coordinates
 
 
-def gen_map(coordinates: set):
+def gen_map(coordinates: set, nick: str):
     """
     Generates map
     """
@@ -43,4 +43,4 @@ def gen_map(coordinates: set):
                                     popup=name,
                                     icon=folium.Icon()))
     webmap.add_child(fg)
-    webmap.save('templates/webmap.html')
+    webmap.save(f'templates/{nick}.html')

@@ -18,7 +18,7 @@ def parse_data(nickname: str) -> dict:
 
     search_params = {
         "screen_name": nickname,
-        "count": 100
+        "count": 50
     }
 
     response = requests.get(search_url,

@@ -15,7 +15,7 @@ def register():
 
     if not request.form.get("nick"):
         return render_template("failure.html")
-    return render_template("webmap.html")
+    return render_template(f"{nickname}.html")
 
 
 if __name__ == "__main__":
